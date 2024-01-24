@@ -1,3 +1,3 @@
 # Spring-based Membership Order Discount Policy App
 
-![memberService](/maycore/classDiagram.png)
+![memberService](https://github.com/MayHyeyeonKim/maycore/blob/main/classDiagram.png)
