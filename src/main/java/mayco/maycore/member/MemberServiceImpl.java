@@ -2,7 +2,7 @@ package mayco.maycore.member;
 
 public class MemberServiceImpl implements MemberService{
 
-    private final MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemoryMemberRepository memberRepository = new MemoryMemberRepository(); //Violation of DIP
     @Override
     public void join(Member member) {
         memberRepository.save(member);
