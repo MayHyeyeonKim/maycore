@@ -1,12 +1,12 @@
-# Membership
+## Membership
 
 ![memberService](https://github.com/MayHyeyeonKim/maycore/blob/main/images/classDiagram.png)
 
-# Order & Discount Policy
+## Order & Discount Policy
 
 ![Order&DiscountService](https://github.com/MayHyeyeonKim/maycore/blob/main/images/Order&DiscountService.png)
 
-# Documentation of encountered errors and the troubleshooting process
+## Documentation of encountered errors and the troubleshooting process
 The client code OrderServiceImpl violates the Dependency Inversion Principle (DIP) by depending on not only the DiscountPolicy interface but also the concrete classes. To adhere to DIP, the dependency should be modified to rely solely on the interface.
 ![DIP&OCP](https://github.com/MayHyeyeonKim/maycore/blob/main/images/DIPOCP.png)
 However, if there is no implementation available, how can the code be executed? In practice, attempting to run the code would result in a NullPointerException (NPE).
@@ -18,3 +18,6 @@ From the perspective of the client, memberServiceImpl, it seems as if the depend
 <br>
 The same approach applies to MemberServiceImpl and OrderServiceImpl as shown in the code below.
 ![AppConfig_DI](https://github.com/MayHyeyeonKim/maycore/blob/main/images/AppConfig_DI.png)
+
+## Dependency Diagram
+![Dependency Diagram](https://github.com/MayHyeyeonKim/maycore/blob/main/images/dependencyDiagram.png)

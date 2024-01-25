@@ -2,6 +2,7 @@ package mayco.maycore;
 
 import mayco.maycore.discount.DiscountPolicy;
 import mayco.maycore.discount.FixDiscountPolicy;
+import mayco.maycore.discount.RateDiscountPolicy;
 import mayco.maycore.member.MemberService;
 import mayco.maycore.member.MemberServiceImpl;
 import mayco.maycore.member.MemoryMemberRepository;
@@ -22,7 +23,8 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy(){
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
+//        return new FixDiscountPolicy();
     }
 }
 
