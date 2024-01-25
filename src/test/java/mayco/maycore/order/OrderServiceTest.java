@@ -1,16 +1,25 @@
 package mayco.maycore.order;
 
+import mayco.maycore.AppConfig;
 import mayco.maycore.member.Grade;
 import mayco.maycore.member.Member;
 import mayco.maycore.member.MemberService;
 import mayco.maycore.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void BeforeEach(){
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     @Test
     void createOrder(){
