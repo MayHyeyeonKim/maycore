@@ -1,8 +1,8 @@
-# Spring-based Membership
+# Membership
 
 ![memberService](https://github.com/MayHyeyeonKim/maycore/blob/main/images/classDiagram.png)
 
-# Spring-based Order & Discount Policy
+# Order & Discount Policy
 
 ![Order&DiscountService](https://github.com/MayHyeyeonKim/maycore/blob/main/images/Order&DiscountService.png)
 
