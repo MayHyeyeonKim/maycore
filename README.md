@@ -16,5 +16,5 @@ However, if there is no implementation available, how can the code be executed? 
 The appConfig object creates the memoryMemberRepository object and passes its reference to instantiate memberServiceImpl through the constructor. 
 From the perspective of the client, memberServiceImpl, it seems as if the dependencies are being injected from the outside, leading to the term Dependency Injection (DI). <br>
 <br>
-The same approach applies to MemberServiceImple and OrderServiceImpl as shown in the code below.
+The same approach applies to MemberServiceImpl and OrderServiceImpl as shown in the code below.
 ![AppConfig_DI](https://github.com/MayHyeyeonKim/maycore/blob/main/images/AppConfig_DI.png)

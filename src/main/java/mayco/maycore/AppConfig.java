@@ -1,5 +1,6 @@
 package mayco.maycore;
 
+import mayco.maycore.discount.DiscountPolicy;
 import mayco.maycore.discount.FixDiscountPolicy;
 import mayco.maycore.member.MemberService;
 import mayco.maycore.member.MemberServiceImpl;
@@ -9,13 +10,19 @@ import mayco.maycore.order.OrderServiceImpl;
 
 public class AppConfig {
     public MemberService memberService(){
-        return new MemberServiceImpl(new MemoryMemberRepository()); //Constructor injection
+        return new MemberServiceImpl(memberRepository());
+    }
+
+    private MemoryMemberRepository memberRepository() {
+        return new MemoryMemberRepository();
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(
-                new MemoryMemberRepository(),
-                new FixDiscountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+    }
+
+    public DiscountPolicy discountPolicy(){
+        return new FixDiscountPolicy();
     }
 }
 
