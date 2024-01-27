@@ -1,8 +1,8 @@
-## Membership
+## Membership with only Java (without Spring)
 
 ![memberService](https://github.com/MayHyeyeonKim/maycore/blob/main/images/classDiagram.png)
 
-## Order & Discount Policy
+## Order & Discount Policy with only Java (without Spring)
 
 ![Order&DiscountService](https://github.com/MayHyeyeonKim/maycore/blob/main/images/Order&DiscountService.png)
 
@@ -21,3 +21,26 @@ The same approach applies to MemberServiceImpl and OrderServiceImpl as shown in 
 
 ## Dependency Diagram
 ![Dependency Diagram](https://github.com/MayHyeyeonKim/maycore/blob/main/images/dependencyDiagram.png)
+
+# Singleton Container
+## Expected code for AppConfig@CGLIB
+[Refer to Git commit 5d2a688](https://github.com/your-username/your-repository/commit/5d2a688)
+
+```java
+@Bean
+public MemberRepository memberRepository() {
+    if (springContainer.containsBean("memoryMemberRepository")) {
+        // If memoryMemberRepository is already registered in the Spring container,
+        // retrieve it from the container and return.
+        return springContainer.getBean("memoryMemberRepository", MemberRepository.class);
+    } else {
+        // If memoryMemberRepository is not registered in the Spring container,
+        // create a new MemoryMemberRepository using the existing logic,
+        // register it in the Spring container, and then return.
+        MemoryMemberRepository memoryMemberRepository = createMemoryMemberRepository();
+        springContainer.registerSingleton("memoryMemberRepository", memoryMemberRepository);
+        return memoryMemberRepository;
+    }
+}
+
+```
