@@ -24,7 +24,7 @@ The same approach applies to MemberServiceImpl and OrderServiceImpl as shown in 
 
 # Singleton Container
 ## Expected code for AppConfig@CGLIB
-[Refer to Git commit 5d2a688](https://github.com/your-username/your-repository/commit/5d2a688)
+[Refer to Git commit 5d2a688](https://github.com/MayHyeyeonKim/maycore/commit/5d2a68858e49ff5cb87a1bb5da79801e6c6076b7)
 
 ```java
 @Bean
