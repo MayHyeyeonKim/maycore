@@ -2,11 +2,9 @@ package mayco.maycore;
 
 import mayco.maycore.member.Grade;
 import mayco.maycore.member.Member;
-import mayco.maycore.member.MemberService;
 import mayco.maycore.member.MemberServiceImpl;
 import mayco.maycore.order.Order;
 import mayco.maycore.order.OrderService;
-import mayco.maycore.order.OrderServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,7 +15,7 @@ public class OrderApp {
 //        OrderService orderService = appConfig.orderService();
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        MemberServiceImpl memberService = applicationContext.getBean("memberService", MemberServiceImpl.class);
         OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
         Long memberId = 1L;

@@ -2,7 +2,6 @@ package mayco.maycore.singleton;
 
 import mayco.maycore.AppConfig;
 import mayco.maycore.member.MemberRepository;
-import mayco.maycore.member.MemberService;
 import mayco.maycore.member.MemberServiceImpl;
 import mayco.maycore.order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;

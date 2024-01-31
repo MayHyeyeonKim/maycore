@@ -46,3 +46,13 @@ public MemberRepository memberRepository() {
 }
 
 ```
+
+# Component Scan Log
+1. Identified candidate component class <br>
+   ![Identified candidate component class](https://github.com/MayHyeyeonKim/maycore/blob/main/images/componentScan1.png)
+2. Creating shared instance of singleton bean <br>
+   ![Creating shared instance of singleton bean](https://github.com/MayHyeyeonKim/maycore/blob/main/images/componentScan2.png)
+3. Autowiring by type <br>
+   ![Autowiring by type](https://github.com/MayHyeyeonKim/maycore/blob/main/images/componentScan3.png)
+
+

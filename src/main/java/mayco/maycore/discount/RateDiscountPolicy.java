@@ -2,7 +2,9 @@ package mayco.maycore.discount;
 
 import mayco.maycore.member.Grade;
 import mayco.maycore.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
     private int discountPercent = 10;
 

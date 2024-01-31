@@ -1,8 +1,6 @@
 package mayco.maycore.beanfind;
 
 import mayco.maycore.AppConfig;
-import mayco.maycore.member.Member;
-import mayco.maycore.member.MemberService;
 import mayco.maycore.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -18,7 +16,7 @@ public class ApplicationContextBasicFindTest {
     @Test
     @DisplayName("Retrieve by Bean Name")
     void findBeanByName(){
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
+        MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
 //        System.out.println("memberService = " + memberService);
 //        System.out.println("memberService.getClass() = " + memberService.getClass());
 
@@ -27,7 +25,7 @@ public class ApplicationContextBasicFindTest {
     @Test
     @DisplayName("Retrieve by Type without Specifying the Name")
     void findBeanByType(){
-        MemberService memberService = ac.getBean(MemberService.class);
+        MemberServiceImpl memberService = ac.getBean(MemberServiceImpl.class);
         Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
@@ -44,7 +42,7 @@ public class ApplicationContextBasicFindTest {
 //        ac.getBean("xxxx", MemberService.class);
 //        MemberService xxxx = ac.getBean("xxxx", MemberService.class);
         assertThrows(NoSuchBeanDefinitionException.class,
-                () -> ac.getBean("xxxx", MemberService.class));
+                () -> ac.getBean("xxxx", MemberServiceImpl.class));
     }
 
 }

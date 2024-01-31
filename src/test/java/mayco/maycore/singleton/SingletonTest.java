@@ -1,8 +1,7 @@
 package mayco.maycore.singleton;
 
 import mayco.maycore.AppConfig;
-import mayco.maycore.member.MemberService;
-import org.assertj.core.api.Assertions;
+import mayco.maycore.member.MemberServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,8 +13,8 @@ public class SingletonTest {
     @DisplayName("DI container without Spring")
     void pureContainer() {
         AppConfig appConfig = new AppConfig();
-        MemberService memberService1 = appConfig.memberService();
-        MemberService memberService2 = appConfig.memberService();
+        MemberServiceImpl memberService1 = appConfig.memberService();
+        MemberServiceImpl memberService2 = appConfig.memberService();
 
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
@@ -42,8 +41,8 @@ public class SingletonTest {
     @DisplayName("SpringContainer&Singleton")
     void springContatiner(){
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberService memberService1 = ac.getBean("memberService", MemberService.class);
-        MemberService memberService2 = ac.getBean("memberService", MemberService.class);
+        MemberServiceImpl memberService1 = ac.getBean("memberService", MemberServiceImpl.class);
+        MemberServiceImpl memberService2 = ac.getBean("memberService", MemberServiceImpl.class);
 
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
